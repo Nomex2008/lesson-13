@@ -1,0 +1,70 @@
+@import 'imp.scss';
+//переміні
+$fx14: 14px;
+$color1: red;
+//mixin
+@mixin fonts($f){
+    font-size: $f;
+}
+//шаблон
+%link{
+    font-size: 22px;
+    &:hover{
+        text-decoration: none;
+        color: black;
+    }
+}
+//block
+.block {
+    padding: 30px;
+    font-size: $fx14;
+    line-height: 20px;
+
+    .block__text {
+        font-style: italic;
+    }
+
+    >p {
+        color: green;
+    }
+    span {
+        color: $color1;
+    }
+    &.block__textStyle {
+        font-style: italic;
+    }
+}
+//link
+.link{
+    @extend %link;
+    color: orange;
+    text-decoration: underline;
+}
+
+.link-2 {
+    @include fonts(33px);
+    color: yellow;
+    @extend %link;
+}
+.solid50{
+    padding: 50%-40%;
+    border: 22-21px solid black;
+}
+
+.main {
+    border: 1px solid black;
+    text-align: center;
+    margin: 0 auto;
+    background: url('../img/white-abstract-background_23-2148810113.avif');
+}
+
+.title {
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+.subTitle {
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-style: italic;
+}
